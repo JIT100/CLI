@@ -1,0 +1,4 @@
+pydantic==1.10.2
+pyinstaller==5.7.0
+pycountry_convert
+fire
