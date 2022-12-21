@@ -12,7 +12,7 @@ def read_database(filename):
         person=data['person']
         address=data['address']
     except IOError:
-        print('\nFile not found, will create a new one.')
+        print('\nDatabase File not found, will create a new one.')
         person={}
         address={}
         database['person']=person
