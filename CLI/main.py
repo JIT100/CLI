@@ -60,6 +60,8 @@ def address_validator(address):
 
 class Person_updater(object):
 
+        """All addtion or updation of person object done by this class."""
+
     def person_view(self,id:int=None):
 
         """Check the details of all the persons or a specific person details from the database."""  
@@ -213,6 +215,9 @@ class Person_updater(object):
 
 
 class Address_updater(object):
+
+    """All addtion or updation of address object done by this class."""
+
     def address_view(self,id:int=None):
 
         """Check all addresses or only one address by ID."""
@@ -234,7 +239,7 @@ class Address_updater(object):
                     addresses=Address.parse_obj(address).dict()
                 except ValidationError as e:
                     return e
-            print('\nThe details of all person database are as followed...\n')
+            print('\nThe details of all address database are as followed...\n')
             pprint(address_dict,sort_dicts=False)
     
     def address_add(self,line1:str,line2: str=None,country: str=None,postcode:str=None):
