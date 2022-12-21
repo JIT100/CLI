@@ -72,10 +72,10 @@ Check the details of all the persons or a specific person details from the datab
 
 * Command: **person_view**
 * Syntax: *`main.exe person_view -id:optional`*
-    To Check all person details on the database, use below example.
-        * Example: `main.exe person_view`
-    To Check a particular person details, Kindly pass the person ID as argument.
-        * Example: `main.exe person_view -i=1` or `main.exe person_view 1`
+To Check all person details on the database, use below example.
+* Example: `main.exe person_view`
+To Check a particular person details, Kindly pass the person ID as argument.
+* Example: `main.exe person_view -i=1` or `main.exe person_view 1`
 
 ### Person Edit ###
 
@@ -126,16 +126,16 @@ Delete a address details from Database by providing correct ID of that address.
 * Syntax: *`main.exe address_delete -id`*
 * Example: `main.exe address_delete -i=1`
 
-### Person View ###
+### Address View ###
 
 Check the details of all the addresses or a specific address details from the database.
 
 * Command: **address_view**
 * Syntax: *`main.exe address_view -id:optional`*
-    To Check all addresses details on the database, use below example.
-        * Example: `main.exe address_view`
-    To Check a particular address details, Kindly pass the address ID as argument.
-        * Example: `main.exe address_view -i=1` or `main.exe address_view 1`
+To Check all addresses details on the database, use below example.
+* Example: `main.exe address_view`
+To Check a particular address details, Kindly pass the address ID as argument.
+* Example: `main.exe address_view -i=1` or `main.exe address_view 1`
 
 
 
