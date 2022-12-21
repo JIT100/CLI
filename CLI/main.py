@@ -4,7 +4,7 @@ import fire
 from collections import Counter
 from settings import DATABASE
 from pprint import pprint
-
+import sys
 
 filename=DATABASE
 database=read_database(filename)
@@ -26,16 +26,23 @@ def name_uniqueness(firstname,lastname):
     return True
 
 def address_uniqueness(line1,line2,country,postcode,id=None):
-    fulladdress=line1+line2+country+postcode
-    for i in address_dict:
-        each_address=address_dict[i]
-        line1=each_address["line1"]
-        line2=each_address["line2"]
-        country=each_address["country"]
-        postcode=each_address["postcode"]
-        full_each_address=line1+line2+country+postcode
-        if fulladdress.lower() == full_each_address.lower():
-            return False
+    try :
+        fulladdress=line1+line2+country+postcode
+        for i in address_dict:
+            each_address=address_dict[i]
+            line1=each_address["line1"]
+            line2=each_address["line2"]
+            country=each_address["country"]
+            postcode=each_address["postcode"]
+            full_each_address=line1+line2+country+postcode
+            if fulladdress.lower() == full_each_address.lower():
+                return False
+    except AttributeError as e:
+        sys.exit(0)
+    except TypeError as e:
+        sys.exit(e)
+    except Exception as e:
+        sys.exit(0)
     return True
     
 def address_validator(address):
@@ -53,7 +60,7 @@ def address_validator(address):
 
 class Person_updater(object):
 
-    def person_view(self,id=None):
+    def person_view(self,id:int=None):
 
         """Check the details of all the persons or a specific person details from the database."""  
 
@@ -78,7 +85,7 @@ class Person_updater(object):
             pprint(person_dict,sort_dicts=False)
 
 
-    def person_add(self,firstname,lastname,dob,nickname=None,address=None):
+    def person_add(self,firstname:str,lastname:str,dob,nickname:str=None,address:str=None):
 
         """Add a new person on the database, by providing all required details of the person."""  
 
@@ -121,7 +128,7 @@ class Person_updater(object):
             return f'\nSomeone with {firstname} {lastname} name already exist in database, Kindly Choose another name.'
         
 
-    def person_edit(self,id,firstname=None,lastname=None,dob=None,nickname=None,address=None):
+    def person_edit(self,id:int,firstname:str=None,lastname:str=None,dob:str=None,nickname:str=None,address:str=None):
 
         """Edit the details of already existing person in the database by providing correct ID & other details."""  
 
@@ -166,7 +173,7 @@ class Person_updater(object):
             return f"\nThe user with {id} id doesn't exist, Kindly provide correct ID."
 
 
-    def person_delete(self,id):
+    def person_delete(self,id:int):
 
         """Delete a person's details from Database by providing correct ID of that person."""  
 
@@ -184,7 +191,7 @@ class Person_updater(object):
             return f"\nThe User with ID of {user_id} doesn't exist in person Database. Kindly check the ID provided."
             
 
-    def search(self,firstname,lastname):
+    def search(self,firstname:str,lastname:str):
 
         """Search through database for a specific person by their first name & last name."""  
 
@@ -206,7 +213,7 @@ class Person_updater(object):
 
 
 class Address_updater(object):
-    def address_view(self,id=None):
+    def address_view(self,id:int=None):
 
         """Check all addresses or only one address by ID."""
 
@@ -261,7 +268,7 @@ class Address_updater(object):
             return e
 
     
-    def address_edit(self,id,line1=None,line2=None,country=None,postcode=None):
+    def address_edit(self,id:int,line1:str=None,line2:str=None,country:str=None,postcode:str=None):
 
         """Edit a existing address by providing correct details & ID."""    
 
@@ -301,7 +308,7 @@ class Address_updater(object):
         else:
             return f"\nThe address with {address_id} id doesn't exist, Kindly provide correct ID."
 
-    def address_delete(self,id):
+    def address_delete(self,id:int):
 
         """Delete a existing address by ID.""" 
 
