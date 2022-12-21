@@ -60,8 +60,8 @@ def address_validator(address):
 
 class Person_updater(object):
 
-        """All addtion or updation of person object done by this class."""
-
+    """All addtion or updation of person object done by this class."""
+    
     def person_view(self,id:int=None):
 
         """Check the details of all the persons or a specific person details from the database."""  
