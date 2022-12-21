@@ -1,3 +1,3 @@
 '''CHANGE THE DATABASE FILE NAME FROM HERE.'''
 
-DATABASE='data.json'
+DATABASE='database.json'
