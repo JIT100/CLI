@@ -72,8 +72,10 @@ Check the details of all the persons or a specific person details from the datab
 
 * Command: **person_view**
 * Syntax: *`main.exe person_view -id:optional`*
+
 To Check all person details on the database, use below example.
 * Example: `main.exe person_view`
+
 To Check a particular person details, Kindly pass the person ID as argument.
 * Example: `main.exe person_view -i=1` or `main.exe person_view 1`
 
@@ -132,8 +134,10 @@ Check the details of all the addresses or a specific address details from the da
 
 * Command: **address_view**
 * Syntax: *`main.exe address_view -id:optional`*
+
 To Check all addresses details on the database, use below example.
 * Example: `main.exe address_view`
+
 To Check a particular address details, Kindly pass the address ID as argument.
 * Example: `main.exe address_view -i=1` or `main.exe address_view 1`
 
