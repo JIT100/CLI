@@ -95,10 +95,10 @@ class Person_updater(object):
         key=id_must_be_unique_integer("person")
         uniquename=name_uniqueness(firstname,lastname)
         all_address=[]
-        check_address=isinstance(address, list)
-        if not check_address:
-            return f'\nAddress parameter has to be a valid list containing integer. Kindly provide list value instead of string or integer.'
         if address:
+            check_address=isinstance(address, list)
+            if not check_address:
+                return f'\nAddress parameter has to be a valid list containing integer. Kindly provide list value instead of string or integer.'
             address_unvalid=address_validator(address)
             if address_unvalid:
                 if address_unvalid["issue"]==1:
@@ -141,9 +141,10 @@ class Person_updater(object):
             user=person[user_id]
             rawdata={"address":address,"firstname":firstname,"lastname":lastname,"dob":dob,"nickname":nickname}
             updated_field=[]
-            check_address=isinstance(address, list)
-            if not check_address:
-                return f'\nAddress parameter has to be a valid list containing integer. Kindly provide list value instead of string or integer.'
+            if address:
+                check_address=isinstance(address, list)
+                if not check_address:
+                    return f'\nAddress parameter has to be a valid list containing integer. Kindly provide list value instead of string or integer.'
             try:
                 for item in rawdata:
                     if rawdata[item]:
